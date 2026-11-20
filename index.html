@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lista de Reposición</title>
+
+  <meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1412" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+
+  <!-- PWA / iOS -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Reposición">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-row">
+      <a class="brand" href="#/">Lista de Reposición</a>
+      <span id="save" class="save" aria-live="polite">Autoguardado activo</span>
+    </div>
+    <div class="searchbox">
+      <input id="q" type="search" placeholder="Buscar: marca, sabor, tamaño…" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-label="Buscar producto">
+      <button id="q-clear" type="button" aria-label="Borrar búsqueda">✕</button>
+    </div>
+    <nav id="subnav" class="subnav" hidden aria-label="Categorías"></nav>
+  </header>
+
+  <main id="main"></main>
+
+  <nav class="tabs" aria-label="Navegación principal">
+    <a id="tab-cats" class="tab active" href="#/"><span class="ti" aria-hidden="true">🗂️</span>Categorías</a>
+    <a id="tab-res" class="tab" href="#/resumen"><span class="ti" aria-hidden="true">📋</span>Resumen<b id="tab-badge" class="badge" hidden>0</b></a>
+  </nav>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="modal" class="modal" hidden></div>
+
+  <noscript><p style="padding:24px;font:18px sans-serif">Esta aplicación necesita JavaScript.</p></noscript>
+
+  <script src="catalog.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
